@@ -201,13 +201,28 @@ Function to find exact matching by applying burrows wheeler transform
 
 END OF FUNCTION
 ```
-MISSING:
-```
 Function: Run length Encode
 ```
-MISSING:
+def run_length_encode(bwt_string: str) -> str:
+    # Initialize encoded text string 
+    # Check if input string is empty and return empty 
+    # Initialize symbol and counter variables 
+    # Iterate through each character in the string 
+            # If next character is the same as the last current symbol add 1 to the counter 
+            # If the next character is different add symbol and counter to encoded string 
+    # Add last symbol after loop and return string 
+
+END OF FUNCTION
 ```
 Function: Decode Run Length Encode
+```
+def run_length_decode(encoded: str) -> str:
+# Initialize decoded string 
+# Iterate through each symbol, counter pair in string 
+         # Extract number of times to repeat each symbol 
+# Return decoded_string 
+
+END OF FUNCTION
 ```
 MISSING:
 ```
