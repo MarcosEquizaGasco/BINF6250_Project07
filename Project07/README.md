@@ -44,13 +44,6 @@ for len(string – 1):
 END FUNCTION
 ```
 
-0 A T G C $               4 $ A T G C
-1 T G C $ A               0 A T G C $
-2 G C $ A T.              3 C $ A T G
-3 C $ A T G               2 G C $ A T
-4 $ A T G C               1 T G C $ A
-[4, 0, 3, 2, 1]
-
 ```
 Function: suffix_array(strinf:str) -> list[int]:
 Create a list of all suffixes of the text, each paired with starting position
@@ -207,25 +200,41 @@ Function to find exact matching by applying burrows wheeler transform
 
 
 END OF FUNCTION
-
-
-
-
-Successes: the outside resource for inversion
-Struggles: 
-<img width="520" height="650" alt="image" src="https://github.com/user-attachments/assets/c199b1cc-44db-4be9-ba3f-833073014c43" />
-
+```
+MISSING:
+```
+Function: Run length Encode
+```
+MISSING:
+```
+Function: Decode Run Length Encode
+```
+MISSING:
+```
+Function: BWT inversion
+```
+MISSING:
+```
+driver code for implementation
 ```
 
 ## Successes
 Our team worked well together and shared ideas and resources that we found exceedingly helpful fo rlearning how ot implement the Burrows-Wheeler Transform. Specifically, on Tuesday, March 17th, after class, I (Stefanie) began researching the algorithm and identified a resource that I shared with my team, in addition to several teammates I had worked with on previous projects.The resource was an interactive tutorial by Robert Aboukhalil, co-creator of Sandbox-bio, an renouned educational platform for bioinformatics. This tutorial walks the reader through each step of the BWT algorithm and includes a greatly simplified approach to BWT inversion, which we demonstrated in our example in the introduction of this README document. 
 
 ## Struggles
-Description of the stumbling blocks the team experienced
+We struggled initially with understanding the inversion process of the BWT and how to implement that in code. Upon discovering Dr. Aboukhalil's (2025) interactive tutorial, "The Burrows-Wheeler Transform", however, we learned a much easier way to recreate the original matrix so we could recover the initial string. Even so, upon reviewing our final code, we realized we had not implemented the BWT inversion, which we needed to recover our initial sequence. This was implemented at the 12th hour, and so the pseudocode is missing for this, but will be included very shortly. 
+
+We also struggled with implementing our functions as separate code blocks in a Jupyter notebook, because this caused issues for us when it came to ensuring each function was compatible with the others and the whole program would run as one unit. Consequently, we created a python file and implemented all functions as one script, then executed to ensure it ran, and also ran test cases from this file. This python implementation file is included in our project directory. This may seem trivial to many people, but having a single script to run makes it much easier to ensure cohesion throughout the code in terms of  parameters and returns, dependencies, and also debugging for me (Stefanie), as I do not come from a strong coding background, but rather, from a Molecular Biology background. Nevertheless, we were ultimately able to identify problems with the cell-by-cell implementation in Jupyter Notebook, and we corrected these to ensure proper execution. Finally, we replaced the functions within each cell of the Jupyter Notebook with the corrected versions of each function.
 
 # Personal Reflections
-## Group Leader
-Group leader's reflection on the project
+## Group Leader- Stefanie Moreno
+Working as the team lead on this Burrows–Wheeler Transform project pushed me to balance conceptual clarity with practical implementation, and that tension ended up being one of the most rewarding parts of the assignment. Being completely unfamiliar with this algorithm, I conducted extensive research to augment my understanding from the lecture, and I found several excellent resources that I shared with my teammates and many of my prior teammates. What surprised me was how much discipline it took to turn that understanding into clean, modular, reproducible code—especially for something as deceptively compact as the BWT pipeline.
+
+One of the biggest challenges was keeping the implementation aligned with first‑principles thinking. It’s easy to write a function that “just works,” but much harder to break eadch function down into single actions that reflect the logical structure of the algorithm. Leading the team through that process, from sequence normalization, rotation generation, lexicographic sorting, last‑column extraction, suffix array construction, FM‑index range updates, run length encoding and decoding, and BWT inversion to recover the original sequenceforced all of us to slow down and articulate why each step exists. That ended up being a major success: our final code isn’t just functional, it’s readable and defensible.
+
+I am also proud of how we handled debugging and cross‑checking. There were several moments where our expectations didn’t match the output, and instead of patching symptoms, we traced the logic back to the exact conceptual step that needed correction. That kind of collaborative troubleshooting is exactly what I strive to enable in a team environment. By the end, we had a pipeline that not only performs the BWT, FM‑index search, and run‑length encoding/decoding correctly, but also reflects a shared understanding of why each component works.
+
+Overall, leading this project reinforced how important it is to write code that teaches as much as it executes. The final script is something I feel confident handing off to anyone learning these algorithms for the first time, and that’s the standard I aim for when I am guiding a team.
 
 ## Other members
 Marcos: Working with Stefanie and Chantera has been really productive. Although I initially felt pretty confident about the algorithm, as I had been able to follow it pretty well in class, we met multiple times throughout the week, focusing mostly on the conceptual component. These sessions, where we all talked about the algorithm and how to implement it, were very beneficial, as they allowed me to get an even better grasp of how it worked, and let me realize what parts I was not so comfortable with. Stefanie even provided an additional resource that visually explained in a very intuitive way how to reconstruct the rotations matrix from the BWT in order to get the original string, which helped me even more. We all complemented and helped each other throughout the project, which made it a very good experience. We didn't run into too many issues during the implementation, aside from making sure we were working with the correct indices during the pattern matching step. I'm happy with how the group worked together and how we achieved our final implementation!
@@ -239,6 +248,8 @@ Not used for this assignment
 
 # References
 Aboukhalil, R. (2025, Oct 9). The Burrows-Wheeler transform. *Sandbox.bio. Retrieved on Mar 18, 2026, from https://sandbox.bio/concepts/bwt
+
+CMU School of Computer Science. (2018, Nov 29). Design & analysis of algorithms: Burrows-Wheeler Transform. *Lecture #25*, p.1-8. https://www.cs.cmu.edu/~15451-f18/lectures/lec25-bwt.pdf
 
 Holt, J. & McMillan, L. (2014). Merging of multi-string BWTs with applications. *Bioinformatics*, 30(24): 3524-3531. https://doi.org/10.1093/bioinformatics/btu584
 
