@@ -22,21 +22,6 @@ The decoding steps to the algorithm are as follows:
 5. And on, and on, until you have no columns left to fill!
 
 
-                    |                    |                     |                    |
-EXAMPLE!!   |---------|                    
-C A T $     | $ C A T |            0 0 0 T      0 0 0 $    0 0 T $     0 0 $ C    0 T $ C
-A T $ C ->  | A T $ C | BWT = TC$A 0 0 0 C  ->  0 0 0 A -> 0 0 C A  -> 0 0 A T -> 0 C A T 
-T $ C A sort| C A T $ |            0 0 0 $ sort 0 0 0 C    0 0 $ C     0 0 C A    0 $ C A
-$ C A T     | T $ C A |            0 0 0 A      0 0 0 T    0 0 A T     0 0 T $    0 A T $              | original|            prepend        sort     prepend       sort     prepend
-            | matrix  |
-            |---------|                                         |
-                                                                
-                                reconstructed   $ C A T         T $ C A         0 $ C A
-                                  matrix!!!     A T $ C         C A T $         0 A T $
-                                        ->      C A T $         $ C A T         0 C A T
-                                                T $ C A         A T $ C         0 T $ C                                                     sort           prepend          sort
-
-
 BWT encoding can be used in bioinformatics to efficiently compress and index large genomic sequences, permitting rapid DNA sequence alignment. By transforming DNA sequences into a format that groups similar characters, it creates compact representations that allow fast searching for reads within massive datasets with low memory usage.
 
 Furthermore, BWT is used to build an FM Index, which acts like a compressed full-text index allowing for rapid searching of specific genetic patterns, substrings, or motifs within sequences (Holt & McMillan, 2014). It is also used for analyzing pangenomes and detecting rare genomic rearrangements, especially in oncology studies, by handling repetitive sequences- a hallmark of human genomes and cancer genomes- efficiently.
@@ -189,7 +174,7 @@ Updates search range during backward search in BWT pattern match algorithm when 
     return new start and end position
 END FUNCTION
 ```
-Function: Finc Match
+Function: Find Match
 ```
 Find_match(pattern, transformed, counts, occurrences, suffix_positions) list[int]:
 Function to find exact matching by applying burrows wheeler transform
