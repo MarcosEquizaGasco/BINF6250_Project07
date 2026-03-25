@@ -242,13 +242,18 @@ Description of the stumbling blocks the team experienced
 ## Group Leader
 Group leader's reflection on the project
 
-## Other member
-Other members' reflections on the project
+## Other members
+Marcos: Working with Stefanie and Chantera has been really productive. Although I initially felt pretty confident about the algorithm, as I had been able to follow it pretty well in class, we met multiple times throughout the week, focusing mostly on the conceptual component. These sessions, where we all talked about the algorithm and how to implement it, were very beneficial, as they allowed me to get an even better grasp of how it worked, and let me realize what parts I was not so comfortable with. Stefanie even provided an additional resource that visually explained in a very intuitive way how to reconstruct the rotations matrix from the BWT in order to get the original string, which helped me even more. We all complemented and helped each other throughout the project, which made it a very good experience. We didn't run into too many issues during the implementation, aside from making sure we were working with the correct indices during the pattern matching step. I'm happy with how the group worked together and how we achieved our final implementation!
+
+ Chantera: I am grateful to my team for the spending time conceptualizing BWT.  Marcos was able to walk us through some of the functions while Stephanie also provided us with a great interactive [reference](https://sandbox.bio/concepts/bwt) that helped us to internalize the algorithm. Writing down the pseudocode during our lessons last week also was beneficial.
+ 
+As a visual learner, the cyclic nature of the algorithm made it easer to internalize. Yet I am still working through understanding `update_range` as I am not certain why we updated the lower and upper ranges as we do. I also think although I understand the algorithm I would need to spend more time on the practical application of the algorithm in bioinformatics.
 
 # Generative AI Appendix
-As per the syllabus
+Not used for this assignment
 
 # References
 Aboukhalil, R. (2025, Oct 9). The Burrows-Wheeler transform. *Sandbox.bio. Retrieved on Mar 18, 2026, from https://sandbox.bio/concepts/bwt
+
 Holt, J. & McMillan, L. (2014). Merging of multi-string BWTs with applications. *Bioinformatics*, 30(24): 3524-3531. https://doi.org/10.1093/bioinformatics/btu584
 
